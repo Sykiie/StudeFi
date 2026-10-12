@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f3" />
+    <title>Study Organizer</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">S</div>
+          <div><strong>Study Organizer</strong><span>Your study space</span></div>
+        </div>
+
+        <div class="nav-label">Workspace</div>
+        <nav class="primary-nav">
+          <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-item" data-page="classes"><span class="nav-icon">▤</span>Classes</button>
+          <button class="nav-item" data-page="materials"><span class="nav-icon">▧</span>Materials</button>
+          <button class="nav-item" data-page="notes"><span class="nav-icon">▤</span>Notes</button>
+          <button class="nav-item" data-page="tools"><span class="nav-icon">✳</span>Study Tools</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="local-card"><span class="local-dot"></span><div><strong>Saved on this device</strong><span>Your library stays in this browser.</span></div></div>
+          <button class="nav-item" id="export-library"><span class="nav-icon">⇧</span>Back up library</button>
+          <button class="nav-item" id="import-library"><span class="nav-icon">⇩</span>Restore backup</button>
+          <input id="backup-file" type="file" accept="application/json,.json" hidden />
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <div class="mobile-brand"><div class="brand-mark">S</div><strong>Study Organizer</strong></div>
+          <div class="breadcrumb" id="breadcrumb">Your workspace <span>/</span> Overview</div>
+          <div class="topbar-actions"><span class="save-status" id="save-status">All changes saved</span><button class="button button-secondary mobile-backup" id="mobile-export-library" aria-label="Back up library">⇧ Backup</button><button class="button button-secondary mobile-backup" id="mobile-import-library">⇩ Restore</button><button class="button button-primary" id="top-add">＋ Add material</button></div>
+        </header>
+        <div class="page-content" id="page-content" aria-live="polite"></div>
+      </main>
+    </div>
+    <div id="modal-root"></div>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

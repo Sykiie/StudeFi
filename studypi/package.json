@@ -1,0 +1,9 @@
+{
+  "name": "study-organizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local-first study organizer web app",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
